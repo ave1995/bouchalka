@@ -10,14 +10,22 @@ const query = `
         thumbnail {
         url(transform: {
           format: JPG
-        })
-    }
+        })},
+        slug,
+        _id,
+        photosCollection
+        {
+            items {
+                url(transform: {
+                    format: JPG
+                    })}
+            }
+        }
     }
   }
-}
 `;
 
-export async function load() {
+export async function load(): Promise<LoadResult> {
   const response = await contentfulFetch(query);
 
   if (!response.ok) {
@@ -30,10 +38,35 @@ export async function load() {
   const { items } = data.dogCollection;
 
   return {
-    dogs: items.map((e: any) => {
+    dogs: items.map((e: Dog) => {
       return {
         ...e,
       };
     }),
   };
+}
+
+export interface LoadResult {
+  dogs: Dog[];
+}
+
+export interface Dog {
+  name: string;
+  description: string;
+  thumbnail: Thumbnail;
+  slug: string;
+  _id: string;
+  photosCollection: PhotosCollection;
+}
+
+interface Thumbnail {
+  url: string;
+}
+
+interface PhotosCollection {
+  items: Photo[];
+}
+
+interface Photo {
+  url: string;
 }

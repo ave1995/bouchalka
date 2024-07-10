@@ -2,7 +2,7 @@
   import "../app.css";
 </script>
 
-<div class="flex flex-row items-center py-3 place-content-between px-16">
+<div class="flex flex-row items-center py-3 place-content-between px-16 border-b">
   <nav class="flex flex-row gap-3">
     <a href="/">Domů</a>
     <a href="/about">O nás</a>

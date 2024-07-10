@@ -1,11 +1,25 @@
 <script lang="ts">
-  export let data: any;
+  import GridDogs from "../components/GridDogs.svelte";
+  import type { Dog, LoadResult } from "./+page.server";
 
-  console.log(data);
+  export let data: LoadResult;
+
+  function createLoadResultWithMultipleDogs(
+    dog: Dog,
+    count: number
+  ): LoadResult {
+    const dogs: Dog[] = Array.from({ length: count }, (_, index) => ({
+      ...dog,
+      name: `${dog.name}-${index + 1}`, // Ensuring unique names based on index
+    }));
+
+    return { dogs };
+  }
+
+  const loadResultWithMultipleDogs = createLoadResultWithMultipleDogs(
+    data.dogs[0],
+    10
+  );
 </script>
 
-{#each data.dogs as dog}
-  <p>{dog.name}</p>
-  <p>{dog.description}</p>
-  <img src={dog.thumbnail.url} alt={dog.name} />
-{/each}
+<GridDogs dogs={loadResultWithMultipleDogs.dogs}></GridDogs>
