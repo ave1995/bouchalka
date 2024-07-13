@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"bigger-picture": "^1.1.17",
 		"contentful": "^10.12.8"
 	}
 }

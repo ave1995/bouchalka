@@ -24,5 +24,7 @@ export interface LoadResult {
   
   interface Photo {
     url: string;
+    height: string;
+    width: string;
   }
   

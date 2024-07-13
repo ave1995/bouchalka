@@ -12,7 +12,9 @@ function generateDogQuery(id: string) {
                     items {
                         url(transform: {
                             format: JPG
-                            })}
+                            }),
+                          width,
+                          height}
                 },
                 description
             }
