@@ -1,5 +1,6 @@
 import { error } from "@sveltejs/kit";
 import contentfulFetch from "$lib/contentful-fetch";
+import type { LoadResult, Dog } from "../../interfaces/dog";
 
 const query = `
 {
@@ -12,7 +13,9 @@ const query = `
           format: JPG
         })},
         slug,
-        _id,
+        sys {
+            id
+        },
         photosCollection
         {
             items {
@@ -44,29 +47,4 @@ export async function load(): Promise<LoadResult> {
       };
     }),
   };
-}
-
-export interface LoadResult {
-  dogs: Dog[];
-}
-
-export interface Dog {
-  name: string;
-  description: string;
-  thumbnail: Thumbnail;
-  slug: string;
-  _id: string;
-  photosCollection: PhotosCollection;
-}
-
-interface Thumbnail {
-  url: string;
-}
-
-interface PhotosCollection {
-  items: Photo[];
-}
-
-interface Photo {
-  url: string;
 }
