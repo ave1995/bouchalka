@@ -4,7 +4,7 @@
 </script>
 
 <div class="flex flex-col items-center">
-  <a href="/dog/{dog.slug}" class="hover:opacity-60">
+  <a href="/dog/{dog.sys.id}" class="hover:opacity-60">
     <div class="aspect-square">
       <img
         src={dog.thumbnail.url}

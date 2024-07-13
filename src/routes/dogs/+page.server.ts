@@ -7,12 +7,10 @@ const query = `
 	dogCollection {
     items {
       name,
-      description,
         thumbnail {
         url(transform: {
           format: JPG
         })},
-        slug,
         sys {
             id
         },

@@ -6,7 +6,6 @@ export interface LoadResult {
     name: string;
     description: string;
     thumbnail: Thumbnail;
-    slug: string;
     sys: Sys;
     photosCollection: PhotosCollection;
   }
