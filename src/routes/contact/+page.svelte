@@ -25,24 +25,26 @@
   });
 </script>
 
-<div id="iframe-container">
-  <iframe
-    title="bouchalka"
-    style="border:none"
-    src="https://frame.mapy.cz/s/nutolomamu"
-    width={$iframeWidth}
-    height={$iframeHeight}
-    frameborder="0"
-  ></iframe>
-</div>
-<div class="pt-6">
-  <div class="text-sm text-gray-600 flex flex-col w-full items-end gap-6">
-    <SocialHrefs/>
-    <div class="flex flex-col items-end">
-      <p>Psí Útulek Bouchalka</p>
-      <p>Na Bouchalce 398</p>
-      <p>Buštěhrad</p>
-      <p>273 43</p>
+<div class="py-3">
+  <div id="iframe-container">
+    <iframe
+      title="bouchalka"
+      style="border:none"
+      src="https://frame.mapy.cz/s/nutolomamu"
+      width={$iframeWidth}
+      height={$iframeHeight}
+      frameborder="0"
+    ></iframe>
+  </div>
+  <div class="pt-6">
+    <div class="text-sm text-gray-600 flex flex-col w-full items-end gap-6">
+      <SocialHrefs />
+      <div class="flex flex-col items-end">
+        <p>Psí Útulek Bouchalka</p>
+        <p>Na Bouchalce 398</p>
+        <p>Buštěhrad</p>
+        <p>273 43</p>
+      </div>
     </div>
   </div>
 </div>
