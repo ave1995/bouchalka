@@ -12,8 +12,8 @@
       <a href="/about">O nás</a>
       <a href="/dogs">Psi</a>
       <a href="/sponsors">Sponzoři</a>
-      <a href="/contacts">Kontakty</a>
-      <a href="/help" class="hover:animate-pulse">
+      <a href="/contact">Kontakt</a>
+      <a href="/donate" class="hover:animate-pulse">
         <img src="/helpdog.png" class="w-7 h-7" alt="Bouchalka" />
       </a>
     </nav>

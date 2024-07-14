@@ -5,11 +5,11 @@
 
   export let data;
 
-  let items = data.photosCollection.items.map((photo) => {
-    return { img: photo.url, width: photo.width, height: photo.height };
-  });
-
   onMount(() => {
+    let items = data.photosCollection.items.map((photo) => {
+      return { img: photo.url, width: photo.width, height: photo.height };
+    });
+
     // initialize BiggerPicture
     let bp = BiggerPicture({
       // @ts-ignore
@@ -32,7 +32,7 @@
   <div id="inline" class="inline-gallery"></div>
   <h1 class="text-2xl font-medium">{data.name}</h1>
   <p class="text-sm text-gray-600">{data.description}</p>
-<a href="/dogs" class="text-sm pt-6">← Zpět na psy</a>
+  <a href="/dogs" class="text-sm pt-6">← Zpět na psy</a>
 </div>
 
 <style>
@@ -40,11 +40,10 @@
     position: relative;
     background: #222;
     overflow: hidden;
-    object-fit: cover;
   }
   .inline-gallery:before {
     content: "";
-    padding-bottom: 66.66%;
+    padding-bottom: 60%;
     display: block;
   }
 </style>
