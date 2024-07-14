@@ -4,7 +4,7 @@
   export let data: SponsorResult;
 </script>
 
-<div class="grid grid-cols-3 py-3">
+<div class="grid grild-cols-2 md:grid-cols-3 lg:grid-cols-3 py-3">
   {#each data.sponsors as sponsor}
     <div class="grid grid-rows-2 items-center">
       {#if sponsor.thumbnail.url}
